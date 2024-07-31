@@ -21,4 +21,10 @@ spec:
               number: 80
 
 
-# first steps: setup vm, do kubectl get nodes, then kubectl create namespace green and for blue, then u create deployments for blue and green versions of app, then apply using kubectl apply -f blue-deployment.yaml and for green similarly, then configure service and ingress, then at the end, update ingress file to switch traffic between blue and green, then apply ingress - kubectl apply -f ingress.yaml so when u do this traffic will be switched to green ans vice versa
+# first steps: setup vm, do kubectl get nodes, 
+then kubectl create namespace green and for blue, 
+then u create deployments for blue and green versions of app, 
+then apply using kubectl apply -f blue-deployment.yaml and for green similarly, 
+then configure service and ingress, 
+then at the end, update ingress file to switch traffic between blue and green, 
+then apply ingress - kubectl apply -f ingress.yaml so when u do this traffic will be switched to green ans vice versa
