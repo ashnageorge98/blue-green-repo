@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: hotel
-        image: ashnageorge98/blue-green:tagname:1.1
+        image: ashnageorge98/blue-green:1.0
         ports:
         - containerPort: 80
