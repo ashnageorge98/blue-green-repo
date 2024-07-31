@@ -4,7 +4,7 @@ metadata:
   name: hotel-green
   namespace: hotel
 spec:
-  replicas: 3
+  replicas: 0
   selector:
     matchLabels:
       app: hotel
@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: hotel
-        image: vipindevops/blue-green:tagname:1.1
+        image: ashnageorge98/blue-green:tagname:1.1
         ports:
         - containerPort: 80
