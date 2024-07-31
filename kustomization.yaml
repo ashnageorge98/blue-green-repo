@@ -1,7 +1,7 @@
 bases:
-- ../demo/deployment/blue
-- ../demo/deployment/green
-- ../demo/service/
+- ../blue-green-repo/deployment/blue
+- ../blue-green-repo/deployment/green
+- ../blue-green-repo/service/
 resources:
     - namespace.yaml
     - ingresscontrol.yaml
