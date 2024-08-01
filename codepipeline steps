@@ -1,0 +1,18 @@
+cerate 3 roles-
+  CodePipleine -> CodePipelineServiceRole , policy - AWSCodePipelineFullAccess
+CodeDeploy -> CodeDeployServiceRole , policy -> AWSCodeDeployRole
+  EC2 -> EC2CodeDeployRole -> AmazonEC2RoleforAWSCodeDeploy
+  Launch 2 instances and Attach the EC2CodeDeployRole IAM role to these instances.
+
+Ensure your instances are in the same region and VPC.
+
+ssh to both
+  Install the CodeDeploy agent on these instances.
+  sudo yum update -y
+sudo yum install ruby -y
+sudo yum install wget -y
+cd /home/ec2-user
+wget https://aws-codedeploy-${AWS_REGION}.s3.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+sudo service codedeploy-agent start
