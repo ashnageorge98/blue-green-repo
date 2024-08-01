@@ -47,6 +47,8 @@ refresh browser
 
 bug found- change servicestable.yaml from green back to blue. modify deploymentblue.yaml replica 0 to 3, depgree from 3 to 0
 git add, commit, push, k apply -f ./
+now prod version web shud point to 1.0
+this way we can deploy new vesion, and rollback without downtime
 
 then configure service and ingress, 
 then at the end, update ingress file to switch traffic between blue and green, 
