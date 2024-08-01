@@ -1,3 +1,15 @@
-launch 2 ec2 instances got blue and green
-install nginx in both
+launch 2 ec2 instances for blue and green
+install nginx in both server
+yum update -y
+yum intall nginx if its linux ec2
+go to cd /usr/share/nginx/html and edit default index.html and add ur custom website contents
+if via httpd web server, do yum update -y, yum install -y httpd, cd /var/www/html
+edit vi index.html
+systemctl start nginx, enable nginx, status nginx
+netstat -ntlp
+if ur code is stored in github or s3 bucket- wget http://webserverash.s3.amazonaws.com/index1.html
+zip files in desktop and copy the zipped folder to bucket
+always ensure u copy the .html u want to the html folder in nginx
 change default nginx file by adding contents from index1.html and index0.html from terraform
+
+add 2 instanes to Load balancer add tgs and refresh dns of LB to see traffic swicthing from blue to green
