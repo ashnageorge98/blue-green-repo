@@ -54,3 +54,6 @@ then configure service and ingress,
 then at the end, update ingress file to switch traffic between blue and green, 
 then apply ingress - kubectl apply -f ingress.yaml so when u do this traffic will be switched to green ans vice versa
 
+
+Refer sample: https://github.com/Azure-Samples/aks-bluegreen-canary/tree/main
+
