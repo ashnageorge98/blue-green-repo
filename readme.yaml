@@ -25,6 +25,13 @@ spec:
 then kubectl create namespace green and for blue, 
 then u create deployments for blue and green versions of app, 
 then apply using kubectl apply -f blue-deployment.yaml and for green similarly, 
+kubectl apply -k ./ - version will he changed
+kubectl get all --namespaces hotel - see pods, services, replica sets, deployments
+modify replica of green from 0 to 3. 3 of each will run
+git status, git add . git commit -m "v1.1" , ls -lth
+kubectl apply -k ./
+3 will run for each now
 then configure service and ingress, 
 then at the end, update ingress file to switch traffic between blue and green, 
 then apply ingress - kubectl apply -f ingress.yaml so when u do this traffic will be switched to green ans vice versa
+
