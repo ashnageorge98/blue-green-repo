@@ -5,7 +5,7 @@ metadata:
   namespace: hotel
 spec:
   rules:
-  - host: www.example.com 
+  - host: file:///C:/Users/ashna/Downloads/index0.html 
     http:
       paths:
       - path: /
