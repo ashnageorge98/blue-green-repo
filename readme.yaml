@@ -27,6 +27,8 @@ then u create deployments for blue and green versions of app,
 then apply using kubectl apply -f blue-deployment.yaml and for green similarly, 
 kubectl apply -k ./ - version will he changed
 kubectl get all --namespaces hotel - see pods, services, replica sets, deployments
+refresh browser
+
 modify replica of green from 0 to 3. 3 of each will run
 git status, git add . git commit -m "v1.1" , ls -lth
 kubectl apply -k ./
@@ -35,8 +37,17 @@ delete rs of idle green dep, whre shows 0, kubectl get rs --namespace hotel
 kubectl delete rs hotwl-green-340idd --namespace hotel
 kubectl get rs --namespace hotel
 kubectl get all --namespaces hotel
+refresh browser
 
 now go change servicestable.yaml from blue to green
+git status, git add and commit -m "v1.1"
+k apply -k ./
+kubectl get all --namespaces hotel
+refresh browser
+
+bug found- change servicestable.yaml from green back to blue. modify deploymentblue.yaml replica 0 to 3, depgree from 3 to 0
+git add, commit, push, k apply -f ./
+
 then configure service and ingress, 
 then at the end, update ingress file to switch traffic between blue and green, 
 then apply ingress - kubectl apply -f ingress.yaml so when u do this traffic will be switched to green ans vice versa
