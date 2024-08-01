@@ -31,6 +31,12 @@ modify replica of green from 0 to 3. 3 of each will run
 git status, git add . git commit -m "v1.1" , ls -lth
 kubectl apply -k ./
 3 will run for each now
+delete rs of idle green dep, whre shows 0, kubectl get rs --namespace hotel
+kubectl delete rs hotwl-green-340idd --namespace hotel
+kubectl get rs --namespace hotel
+kubectl get all --namespaces hotel
+
+now go change servicestable.yaml from blue to green
 then configure service and ingress, 
 then at the end, update ingress file to switch traffic between blue and green, 
 then apply ingress - kubectl apply -f ingress.yaml so when u do this traffic will be switched to green ans vice versa
