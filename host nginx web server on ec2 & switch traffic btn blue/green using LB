@@ -1,0 +1,3 @@
+launch 2 ec2 instances got blue and green
+install nginx in both
+change default nginx file by adding contents from index1.html and index0.html from terraform
