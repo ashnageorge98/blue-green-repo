@@ -8,7 +8,7 @@ metadata:
   namespace: blue
 spec:
   rules:
-  - host: myapp.example.com
+  - host: www.example.com
     http:
       paths:
       - path: /
