@@ -1,15 +1,16 @@
+# Host a website via nginx web server in linux machine and attach to LB to switch  traffic between blue and green envts
 launch 2 ec2 instances for blue and green
+ssh to it and yum update -y
 install nginx in both server
-yum update -y
 yum intall nginx if its linux ec2
-go to cd /usr/share/nginx/html and edit default index.html and add ur custom website contents
-if via httpd web server, do yum update -y, yum install -y httpd, cd /var/www/html
-edit vi index.html
 systemctl start nginx, enable nginx, status nginx
-netstat -ntlp
-if ur code is stored in github or s3 bucket- wget http://webserverash.s3.amazonaws.com/index1.html
-zip files in desktop and copy the zipped folder to bucket
-always ensure u copy the .html u want to the html folder in nginx
-change default nginx file by adding contents from index1.html and index0.html from terraform
 
-add 2 instanes to Load balancer add tgs and refresh dns of LB to see traffic swicthing from blue to green
+go to cd /usr/share/nginx/html and edit default index.html and add ur custom website contents from index0 and index1.html files
+edit vi index.html
+(if hosting website via httpd web server, do yum update -y, yum install -y httpd, cd /var/www/html)
+netstat -ntlp
+if ur code is stored in github or s3 bucket in zip folder copy zipped folder from dekstop to s3 as folder and access this folder to ssh terminal via- wget http://webserverash.s3.amazonaws.com/index1.html, 
+zip files in desktop
+always ensure u copy the .html u want to the html folder in nginx
+
+create a Load balancer add register 2 instances to tgs and refresh DNS of LB to see traffic switching from blue to green (0 to 1)
