@@ -6,13 +6,25 @@ CodeDeploy -> CodeDeployServiceRole , policy -> AWSCodeDeployRole
 
 Ensure your instances are in the same region and VPC.
 
+create app in codedeploy
+In the CodeDeploy Console, within your application, create two deployment groups (blue and green).
+choose blue/green and tags - blue and green
+Select the appropriate EC2 instances for each deployment group.
+Specify the service role CodeDeployServiceRole.
+Choose ALB and tgs
+
 ssh to both
-  Install the CodeDeploy agent on these instances.
-  sudo yum update -y
+  Install the CodeDeploy agent on 2 instances:
+sudo yum update -y
 sudo yum install ruby -y
+# Install wget (for Amazon Linux)
 sudo yum install wget -y
 cd /home/ec2-user
-wget https://aws-codedeploy-${AWS_REGION}.s3.amazonaws.com/latest/install
+wget https://aws-codedeploy-us-west-2.s3.us-west-2.amazonaws.com/latest/install
+# Make the install script executable
 chmod +x ./install
 sudo ./install auto
-sudo service codedeploy-agent start
+sudo systemctl start codedeploy-agent
+sudo systemctl status codedeploy-agent
+
+
