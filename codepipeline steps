@@ -49,3 +49,6 @@ Add a deploy action.
 Choose AWS CodeDeploy as the deploy provider.
 Select your CodeDeploy application (BlueGreenApp) and deployment group (e.g., blue).
 
+createa new user in iam and configure aws cli byaccess key way
+verify aws configure bu cmd -> aws sts get-caller-identity
+
