@@ -27,4 +27,23 @@ sudo ./install auto
 sudo systemctl start codedeploy-agent
 sudo systemctl status codedeploy-agent
 
+prep app code to define deployment process: appspec.yml
+
+Create codepipeline:
+Click on "Create pipeline".
+Name your pipeline (e.g., BlueGreenPipeline).
+Select the CodePipelineServiceRole.
+
+Source Stage:
+Choose "GitHub" as the source provider.
+Connect to your GitHub account and select the repository and branch to use.
+Configure a webhook to trigger the pipeline on code changes.
+
+Build Stage (Optional):
+If you need a build stage, add a build provider (e.g., AWS CodeBuild) to compile and test your application.
+Deploy Stage:
+
+Add a deploy action.
+Choose AWS CodeDeploy as the deploy provider.
+Select your CodeDeploy application (BlueGreenApp) and deployment group (e.g., blue).
 
