@@ -1,0 +1,20 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+  pre_build:
+    commands:
+      - echo Preparing build environment...
+  build:
+    commands:
+      - echo Building started on `date`
+      - mkdir -p output/blue
+      - mkdir -p output/green
+      - aws s3 cp s3://codepipeline-us-west-2-449210231073/BlueGreenPipeline/index0.html output/blue/
+      - aws s3 cp s3://codepipeline-us-west-2-449210231073/BlueGreenPipeline/index1.html output/green/
+      - echo Building completed on `date`
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'output'
