@@ -1,4 +1,6 @@
-cerate 3 roles-
+ChatGPT question: With detailed steps tell how to configure aws codepipeline to github and ec2 for a blue green deployment and traffic switch
+
+create 3 roles-
   CodePipleine -> CodePipelineServiceRole , policy - AWSCodePipelineFullAccess
 CodeDeploy -> CodeDeployServiceRole , policy -> AWSCodeDeployRole
   EC2 -> EC2CodeDeployRole -> AmazonEC2RoleforAWSCodeDeploy
