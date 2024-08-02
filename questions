@@ -1,0 +1,50 @@
+Question
+Shold i update the deployment group by :
+
+cmd: aws deploy update-deployment-group --cli-input-json file://deployment-group-config.json
+
+pls modify below script for app: BlueGreenApp, prodTrafficRoute arn: , testTrafficRoute arn:  {
+  "applicationName": "MyApp",
+  "deploymentGroupName": "MyDeploymentGroup",
+  "deploymentConfigName": "CodeDeployDefault.AllAtOnce",
+  "serviceRoleArn": "arn:aws:iam::123456789012:role/CodeDeployDemoRole",
+  "blueGreenDeploymentConfiguration": {
+    "terminateBlueInstancesOnDeploymentSuccess": {
+      "action": "TERMINATE",
+      "terminationWaitTimeInMinutes": 5
+    },
+    "deploymentReadyOption": {
+      "actionOnTimeout": "CONTINUE_DEPLOYMENT"
+    },
+    "greenFleetProvisioningOption": {
+      "action": "DISCOVER_EXISTING"
+    }
+  },
+  "loadBalancerInfo": {
+    "targetGroupPairInfoList": [
+      {
+        "targetGroups": [
+          {
+            "name": "BlueTargetGroup"
+          },
+          {
+            "name": "GreenTargetGroup"
+          }
+        ],
+        "prodTrafficRoute": {
+          "listenerArns": [
+            "arn:aws:elasticloadbalancing:region:123456789012:listener/app/my-load-balancer/50dc6c495c0c9188/8d5f339ed6e0f6fa"
+          ]
+        },
+        "testTrafficRoute": {
+          "listenerArns": [
+            "arn:aws:elasticloadbalancing:region:123456789012:listener/app/my-load-balancer/50dc6c495c0c9188/8d5f339ed6e0f6fb"
+          ]
+        }
+      }
+    ]
+  }
+}
+
+also should i connect appspec file to ec2
+how to connect s3 to LB
